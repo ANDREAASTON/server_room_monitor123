@@ -75,7 +75,7 @@ body.page-login {
   justify-content: center;
   background:
     linear-gradient(180deg, rgba(11, 23, 38, 0.55), rgba(11, 23, 38, 0.5)),
-    url("download (5).jpg");
+    url("login-bg.jpg");
   background-size: cover, cover;
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
@@ -196,7 +196,7 @@ button.primary:disabled {
 body.page-dashboard {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.7)),
-    url("download (6).jpg");
+    url("dashboard-bg.jpg");
   background-size: cover, cover;
   background-position: center, center;
   background-repeat: no-repeat, no-repeat;
@@ -464,3 +464,4 @@ tbody td {
     width: 100%;
   }
 }
+
