@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Server Room Monitor - Dashboard</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="page-dashboard">
+  <header>
+    <h1>Server Room Monitor</h1>
+    <div class="hdr-right">
+      <span><span class="online-dot" id="connDot"></span><span id="connLabel">Connecting...</span></span>
+      <span id="lastUpdate">-</span>
+      <button class="logout" id="logoutBtn" type="button">Sign Out</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="loadingMsg">Loading data...</div>
+
+    <!-- Status cards -->
+    <div class="cards" id="statusCards" style="display:none">
+      <div class="card" id="cTemp">
+        <div class="label">Temperature</div>
+        <div class="value" id="vTemp">-</div>
+        <div class="unit">&deg;C</div>
+      </div>
+      <div class="card" id="cHumid">
+        <div class="label">Humidity</div>
+        <div class="value" id="vHumid">-</div>
+        <div class="unit">%</div>
+      </div>
+      <div class="card" id="cGas">
+        <div class="label">Gas / Smoke</div>
+        <div class="value" id="vGas">-</div>
+      </div>
+      <div class="card" id="cPwr">
+        <div class="label">Power Source</div>
+        <div class="value" id="vPwr">-</div>
+      </div>
+      <div class="card" id="cAlarm">
+        <div class="label">Alarm</div>
+        <div class="value" id="vAlarm">-</div>
+      </div>
+    </div>
+
+    <!-- Recent logs -->
+    <div id="tableSection" style="display:none">
+      <div class="section-title">Recent Telemetry (last 20 rows)</div>
+      <p class="refresh-info" id="refreshInfo">Auto-refreshes every 5 seconds</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th><th>Temp (&deg;C)</th><th>Humidity (%)</th>
+              <th>Gas</th><th>Grid</th><th>Power</th><th>Alarm</th>
+            </tr>
+          </thead>
+          <tbody id="logBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    &copy; 2026 Team: Andrea Aston, Tamanda Kamoto & Doreen Abel
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+/* ==========================================================================
+   Server Room Monitor - Shared Styles
+   Applies to login and dashboard pages
+   ========================================================================== */
+
+:root {
+  --bg: #e7edf6;
+  --panel: #f8fafc;
+  --panel-border: #cfd8e6;
+  --text: #0b1726;
+  --muted: #3f4f66;
+  --muted-2: #5b6b84;
+  --accent: #1d4ed8;
+  --accent-hover: #1e40af;
+  --ok: #15803d;
+  --warn: #b45309;
+  --alert: #b91c1c;
+  --server-blue: #0b3b79;
+  --server-cyan: #0284c7;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    /* Soft grid for a server-room floor vibe */
+    linear-gradient(90deg, rgba(11, 59, 121, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(11, 59, 121, 0.08) 1px, transparent 1px),
+    /* Large, faint server silhouette */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='900' height='520' viewBox='0 0 900 520'><rect width='900' height='520' fill='none'/><g opacity='0.18'><rect x='80' y='60' width='260' height='400' rx='16' fill='%23c9d6ea' stroke='%2382a0c8' stroke-width='3'/><rect x='560' y='60' width='260' height='400' rx='16' fill='%23c9d6ea' stroke='%2382a0c8' stroke-width='3'/><g fill='%2382a0c8'><rect x='110' y='90' width='200' height='22' rx='4'/><rect x='110' y='130' width='200' height='22' rx='4'/><rect x='110' y='170' width='200' height='22' rx='4'/><rect x='110' y='210' width='200' height='22' rx='4'/><rect x='110' y='250' width='200' height='22' rx='4'/><rect x='110' y='290' width='200' height='22' rx='4'/><rect x='110' y='330' width='200' height='22' rx='4'/><rect x='110' y='370' width='200' height='22' rx='4'/><rect x='590' y='90' width='200' height='22' rx='4'/><rect x='590' y='130' width='200' height='22' rx='4'/><rect x='590' y='170' width='200' height='22' rx='4'/><rect x='590' y='210' width='200' height='22' rx='4'/><rect x='590' y='250' width='200' height='22' rx='4'/><rect x='590' y='290' width='200' height='22' rx='4'/><rect x='590' y='330' width='200' height='22' rx='4'/><rect x='590' y='370' width='200' height='22' rx='4'/></g><g fill='%230284c7'><circle cx='140' cy='420' r='5'/><circle cx='160' cy='420' r='5'/><circle cx='180' cy='420' r='5'/><circle cx='620' cy='420' r='5'/><circle cx='640' cy='420' r='5'/><circle cx='660' cy='420' r='5'/></g></g></svg>"),
+    radial-gradient(900px 480px at 85% 0%, rgba(2, 132, 199, 0.18), transparent 55%),
+    radial-gradient(700px 520px at 10% 0%, rgba(11, 59, 121, 0.18), transparent 60%),
+    linear-gradient(180deg, #e9eff9 0%, #e1e8f4 55%, #e7edf6 100%);
+  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 56px 56px, 56px 56px, 900px 520px, auto, auto, auto;
+  background-position: center, center, center 20px, 85% 0%, 10% 0%, center;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--panel-border);
+  background: #dfe7f4;
+  color: #27344a;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Login Page
+   ========================================================================== */
+
+body.page-login {
+  align-items: stretch;
+  justify-content: center;
+  background:
+    linear-gradient(180deg, rgba(11, 23, 38, 0.55), rgba(11, 23, 38, 0.5)),
+    url("download (5).jpg");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.login-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+  color: var(--server-blue);
+}
+
+/* Subtle hover only on login card */
+.page-login .card:hover {
+  transform: translateY(-3px);
+  border-color: #bcd3f5;
+  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.2);
+}
+
+/* Dashboard cards: tighter layout + hover */
+.page-dashboard .card {
+  padding: 1.2rem;
+  max-width: none;
+}
+
+.page-dashboard .card:hover {
+  transform: translateY(-3px);
+  border-color: #bcd3f5;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.18);
+}
+
+.card .sub {
+  font-size: 0.85rem;
+  color: var(--muted-2);
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: #f0f4fb;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button.primary {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+button.primary:hover {
+  background: var(--accent-hover);
+}
+
+button.primary:disabled {
+  background: var(--panel-border);
+  cursor: not-allowed;
+}
+
+.error {
+  background: #450a0a;
+  border: 1px solid #991b1b;
+  border-radius: 6px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.85rem;
+  color: #fca5a5;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+/* ==========================================================================
+   Dashboard Page
+   ========================================================================== */
+
+body.page-dashboard {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.7)),
+    url("download (6).jpg");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 1.1rem;
+  color: var(--server-blue);
+}
+
+.hdr-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--muted-2);
+  flex-wrap: wrap;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.online-dot.offline {
+  background: var(--alert);
+}
+
+button.logout {
+  background: none;
+  border: 1px solid var(--panel-border);
+  color: var(--muted);
+  padding: 0.35rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+button.logout:hover {
+  background: #e7eefb;
+  color: var(--text);
+}
+
+.page-dashboard main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card .label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted-2);
+  margin-bottom: 0.6rem;
+}
+
+.card .value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--server-blue);
+  line-height: 1;
+}
+
+.card .unit {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+.card.alert {
+  border-color: var(--alert);
+  background: #fff5f5;
+}
+
+.card.ok {
+  border-color: var(--ok);
+  background: #f3fff7;
+}
+
+.card.warn {
+  border-color: var(--warn);
+  background: #fff8ee;
+}
+
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+thead th {
+  background: #f3f7ff;
+  color: var(--muted-2);
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--panel-border);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--panel);
+}
+
+tbody tr:hover {
+  background: #eef4ff;
+}
+
+tbody td {
+  padding: 0.55rem 0.8rem;
+  color: #cbd5e1;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.badge.ok {
+  background: #e7f8ee;
+  color: #15803d;
+}
+
+.badge.alert {
+  background: #ffe9e9;
+  color: #b91c1c;
+}
+
+.badge.grid {
+  background: #e7f0ff;
+  color: #1d4ed8;
+}
+
+.badge.bkup {
+  background: #fff1e6;
+  color: #c2410c;
+}
+
+.refresh-info {
+  font-size: 0.75rem;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+#loadingMsg {
+  text-align: center;
+  padding: 3rem;
+  color: #475569;
+}
+
+/* ==========================================================================
+   Responsive adjustments
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .page-dashboard main {
+    padding: 1.1rem;
+  }
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 0.8rem 1rem;
+  }
+  header h1 {
+    font-size: 1rem;
+  }
+  .hdr-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+  }
+  .page-dashboard main {
+    padding: 0.9rem;
+  }
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .card .value {
+    font-size: 1.5rem;
+  }
+  .section-title {
+    font-size: 0.78rem;
+  }
+  table {
+    font-size: 0.78rem;
+  }
+  thead th,
+  tbody td {
+    padding: 0.45rem 0.55rem;
+  }
+  .site-footer {
+    font-size: 0.78rem;
+    padding: 0.6rem 0.75rem;
+  }
+  .login-wrap {
+    padding: 1.25rem 0.9rem;
+  }
+  .card h1 {
+    font-size: 1.2rem;
+  }
+  button.primary {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .hdr-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  button.logout {
+    width: 100%;
+  }
+}
