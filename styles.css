@@ -358,7 +358,6 @@ button.logout:hover {
 
 table {
   width: 100%;
-  min-width: 720px;
   border-collapse: collapse;
   font-size: 0.84rem;
 }
@@ -481,13 +480,56 @@ tbody td {
   .section-title {
     font-size: 0.78rem;
   }
-  table {
-    min-width: 640px;
-    font-size: 0.78rem;
+  .table-wrap {
+    overflow-x: visible;
   }
-  thead th,
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    width: 100%;
+  }
+  thead {
+    display: none;
+  }
+  tbody {
+    display: grid;
+    gap: 0.75rem;
+  }
+  tbody tr {
+    border: 1px solid var(--panel-border);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+  }
+  tbody tr:hover {
+    background: rgba(255, 255, 255, 0.92);
+  }
   tbody td {
-    padding: 0.45rem 0.55rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.7rem 0.85rem;
+    color: var(--text);
+    border-bottom: 1px solid rgba(207, 216, 230, 0.7);
+    font-size: 0.82rem;
+  }
+  tbody td:last-child {
+    border-bottom: none;
+  }
+  tbody td::before {
+    content: attr(data-label);
+    flex: 0 0 96px;
+    color: var(--muted-2);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
   .site-footer {
     font-size: 0.78rem;
@@ -516,6 +558,14 @@ tbody td {
   .time-pill {
     padding-left: 0.45rem;
     padding-right: 0.45rem;
+  }
+  tbody td {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  tbody td::before {
+    flex-basis: auto;
   }
 }
 

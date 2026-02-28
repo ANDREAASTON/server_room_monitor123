@@ -211,13 +211,13 @@ function render(rows) {
     .map(
       (r) => `
         <tr>
-          <td>${new Date(r.created_at).toLocaleString()}</td>
-          <td>${r.temperature_c !== null ? Number(r.temperature_c).toFixed(1) : "--"}</td>
-          <td>${r.humidity_pct !== null ? Number(r.humidity_pct).toFixed(0) : "--"}</td>
-          <td><span class="badge ${r.gas_alert ? "alert" : "ok"}">${r.gas_alert ? "ALERT" : "OK"}</span></td>
-          <td><span class="badge ${r.grid_present ? "ok" : "alert"}">${r.grid_present ? "YES" : "NO"}</span></td>
-          <td><span class="badge ${r.power_source === "GRID" ? "grid" : "bkup"}">${r.power_source}</span></td>
-          <td><span class="badge ${r.alarm_active ? "alert" : "ok"}">${r.alarm_active ? "ON" : "OFF"}</span></td>
+          <td data-label="Time">${new Date(r.created_at).toLocaleString()}</td>
+          <td data-label="Temp">${r.temperature_c !== null ? Number(r.temperature_c).toFixed(1) : "--"}</td>
+          <td data-label="Humidity">${r.humidity_pct !== null ? Number(r.humidity_pct).toFixed(0) : "--"}</td>
+          <td data-label="Gas"><span class="badge ${r.gas_alert ? "alert" : "ok"}">${r.gas_alert ? "ALERT" : "OK"}</span></td>
+          <td data-label="Grid"><span class="badge ${r.grid_present ? "ok" : "alert"}">${r.grid_present ? "YES" : "NO"}</span></td>
+          <td data-label="Power"><span class="badge ${r.power_source === "GRID" ? "grid" : "bkup"}">${r.power_source}</span></td>
+          <td data-label="Alarm"><span class="badge ${r.alarm_active ? "alert" : "ok"}">${r.alarm_active ? "ON" : "OFF"}</span></td>
         </tr>`
     )
     .join("");
