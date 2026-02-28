@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Server Room Monitor - Dashboard</title>
+  <link rel="icon" type="image/jpeg" href="icon.jpg"/>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body class="page-dashboard">
@@ -15,10 +16,8 @@
       <button class="logout" id="logoutBtn" type="button">Sign Out</button>
     </div>
   </header>
-
   <main>
     <div id="loadingMsg">Loading data...</div>
-
     <!-- Status cards -->
     <div class="cards" id="statusCards" style="display:none">
       <div class="card" id="cTemp">
@@ -44,7 +43,6 @@
         <div class="value" id="vAlarm">-</div>
       </div>
     </div>
-
     <!-- Recent logs -->
     <div id="tableSection" style="display:none">
       <div class="section-title">Recent Telemetry (last 20 rows)</div>
@@ -62,11 +60,9 @@
       </div>
     </div>
   </main>
-
   <footer class="site-footer">
     &copy; 2026 Team: Andrea Aston, Tamanda Kamoto & Doreen Abel
   </footer>
-
   <script src="app.js" defer></script>
 </body>
 </html>
