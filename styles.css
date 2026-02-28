@@ -231,6 +231,30 @@ header h1 {
   font-size: 0.82rem;
   color: var(--muted-2);
   flex-wrap: wrap;
+  min-width: 0;
+}
+
+.status-pill,
+.time-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 59, 121, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  white-space: nowrap;
+}
+
+.status-pill {
+  font-weight: 600;
+  color: var(--server-blue);
+}
+
+.time-pill {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
 }
 
 .online-dot {
@@ -247,18 +271,24 @@ header h1 {
 }
 
 button.logout {
-  background: none;
-  border: 1px solid var(--panel-border);
-  color: var(--muted);
-  padding: 0.35rem 0.8rem;
-  border-radius: 5px;
+  min-height: 36px;
+  background: linear-gradient(180deg, #1d4ed8, #1e40af);
+  border: 1px solid #1e3a8a;
+  color: #fff;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
   cursor: pointer;
   font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 button.logout:hover {
-  background: #e7eefb;
-  color: var(--text);
+  background: linear-gradient(180deg, #2563eb, #1d4ed8);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(29, 78, 216, 0.28);
 }
 
 .page-dashboard main {
@@ -419,9 +449,22 @@ tbody td {
   }
   .hdr-right {
     width: 100%;
-    justify-content: flex-start;
-    gap: 0.6rem;
-    font-size: 0.78rem;
+    justify-content: space-between;
+    gap: 0.35rem;
+    font-size: 0.74rem;
+    flex-wrap: nowrap;
+  }
+  .status-pill,
+  .time-pill,
+  button.logout {
+    min-width: 0;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+  }
+  .status-pill,
+  .time-pill {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .page-dashboard main {
     padding: 0.9rem;
@@ -463,11 +506,16 @@ tbody td {
 
 @media (max-width: 420px) {
   .hdr-right {
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 0.3rem;
   }
   button.logout {
-    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .status-pill,
+  .time-pill {
+    padding-left: 0.45rem;
+    padding-right: 0.45rem;
   }
 }
 
