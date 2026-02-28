@@ -360,6 +360,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.84rem;
+  table-layout: fixed;
 }
 
 thead th {
@@ -383,7 +384,8 @@ tbody tr:hover {
 
 tbody td {
   padding: 0.55rem 0.8rem;
-  color: #cbd5e1;
+  color: var(--text);
+  word-break: break-word;
 }
 
 .badge {
@@ -480,58 +482,28 @@ tbody td {
   .section-title {
     font-size: 0.78rem;
   }
-  .table-wrap {
-    overflow-x: visible;
-  }
   table {
-    display: block;
-    width: 100%;
+    font-size: 0.68rem;
   }
-  thead {
-    display: none;
-  }
-  tbody {
-    display: block;
-    width: 100%;
-  }
-  tbody tr {
-    display: block;
-    width: 100%;
-    border: 1px solid var(--panel-border);
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.86);
-    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
-    overflow: hidden;
-    margin-bottom: 0.75rem;
-  }
-  tbody tr:hover {
-    background: rgba(255, 255, 255, 0.92);
-  }
-  tbody tr:last-child {
-    margin-bottom: 0;
-  }
+  thead th,
   tbody td {
-    display: flex;
-    width: 100%;
+    padding: 0.35rem 0.25rem;
+    font-size: 0.68rem;
+    line-height: 1.2;
+    vertical-align: middle;
+  }
+  thead th {
+    letter-spacing: 0.03em;
+  }
+  .badge {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    padding: 0.7rem 0.85rem;
-    color: var(--text);
-    border-bottom: 1px solid rgba(207, 216, 230, 0.7);
-    font-size: 0.82rem;
-  }
-  tbody td:last-child {
-    border-bottom: none;
-  }
-  tbody td::before {
-    content: attr(data-label);
-    flex: 0 0 96px;
-    color: var(--muted-2);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    justify-content: center;
+    padding: 0.12rem 0.28rem;
+    font-size: 0.58rem;
+    line-height: 1.1;
+    text-align: center;
+    max-width: 100%;
   }
   .site-footer {
     font-size: 0.78rem;
@@ -561,13 +533,17 @@ tbody td {
     padding-left: 0.45rem;
     padding-right: 0.45rem;
   }
-  tbody td {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.35rem;
+  table {
+    font-size: 0.6rem;
   }
-  tbody td::before {
-    flex-basis: auto;
+  thead th,
+  tbody td {
+    padding: 0.3rem 0.18rem;
+    font-size: 0.6rem;
+  }
+  .badge {
+    font-size: 0.52rem;
+    padding: 0.1rem 0.22rem;
   }
 }
 
