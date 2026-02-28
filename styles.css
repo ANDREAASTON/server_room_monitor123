@@ -483,12 +483,7 @@ tbody td {
   .table-wrap {
     overflow-x: visible;
   }
-  table,
-  thead,
-  tbody,
-  tr,
-  th,
-  td {
+  table {
     display: block;
     width: 100%;
   }
@@ -496,21 +491,28 @@ tbody td {
     display: none;
   }
   tbody {
-    display: grid;
-    gap: 0.75rem;
+    display: block;
+    width: 100%;
   }
   tbody tr {
+    display: block;
+    width: 100%;
     border: 1px solid var(--panel-border);
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.86);
     box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
     overflow: hidden;
+    margin-bottom: 0.75rem;
   }
   tbody tr:hover {
     background: rgba(255, 255, 255, 0.92);
   }
+  tbody tr:last-child {
+    margin-bottom: 0;
+  }
   tbody td {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
