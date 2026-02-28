@@ -421,6 +421,7 @@ tbody td {
   font-size: 0.75rem;
   color: #475569;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 #loadingMsg {
