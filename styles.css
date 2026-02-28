@@ -117,6 +117,10 @@ body.page-login {
 .page-dashboard .card {
   padding: 1.2rem;
   max-width: none;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .page-dashboard .card:hover {
@@ -306,24 +310,27 @@ button.logout:hover {
 }
 
 .card .label {
-  font-size: 0.72rem;
+  font-size: clamp(0.82rem, 0.5vw + 0.72rem, 1rem);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--muted-2);
   margin-bottom: 0.6rem;
+  line-height: 1.3;
 }
 
 .card .value {
-  font-size: 1.9rem;
+  font-size: clamp(1.9rem, 1.5vw + 1.4rem, 2.8rem);
   font-weight: 700;
   color: var(--server-blue);
-  line-height: 1;
+  line-height: 1.05;
+  overflow-wrap: anywhere;
 }
 
 .card .unit {
-  font-size: 0.75rem;
+  font-size: clamp(0.85rem, 0.4vw + 0.72rem, 1rem);
   color: var(--muted);
   margin-top: 0.3rem;
+  line-height: 1.2;
 }
 
 .card.alert {
@@ -479,9 +486,16 @@ tbody td {
   }
   .page-dashboard .card {
     padding: 1rem;
+    min-height: 132px;
   }
   .card .value {
-    font-size: 1.5rem;
+    font-size: clamp(1.7rem, 4.8vw, 2.2rem);
+  }
+  .card .label {
+    font-size: clamp(0.78rem, 2.4vw, 0.92rem);
+  }
+  .card .unit {
+    font-size: clamp(0.78rem, 2.2vw, 0.92rem);
   }
   .section-title {
     font-size: 0.78rem;
